@@ -137,7 +137,7 @@ db.createCollection("categoria", {
         required: ["fecha_orden", "estado", "id_cliente", "total"],
         properties: {
           fecha_orden: {
-            bsonType: "string",
+            bsonType: "date",
             description: "Debe ser una cadena y es obligatorio"
           },
           estado: {
@@ -149,8 +149,8 @@ db.createCollection("categoria", {
             description: "Debe ser una referencia válida a CLIENTE y es obligatorio"
           },
           total: {
-            bsonType: "double",
-            description: "Debe ser un número decimal y es obligatorio"
+            bsonType: "int",
+            description: "Debe ser un número entero y es obligatorio"
           },
           id_repartidor: {
             bsonType: "objectId",
@@ -185,7 +185,7 @@ db.createCollection("categoria", {
             description: "Debe ser un entero y es obligatorio"
           },
           precio_unitario: {
-            bsonType: "double",
+            bsonType: "int",
             description: "Debe ser un número decimal y es obligatorio"
           }
         }

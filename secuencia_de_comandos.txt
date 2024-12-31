@@ -1,18 +1,12 @@
 - Para correr estos comandos en la terminal se debe estar posicionado en la carpeta donde se encuentran los scripts correspondientes
-- Cabe mencionar que el "postgres" en los comandos corresponde al nombre default de usuario, en caso de poseer un nombre de usuario diferente se debe reemplazar por ese en cada línea
+- Se usa mongosh para leer los archivos y añadirlos a las colecciones
 
-- psql -U postgres -f dbCreate.sql
-- psql -U postgres -f loadData.sql
-- psql -U postgres -f triggerCreate.sql
+-Para crear la base de datos en base a validaciones de datos para cada coleccion
+-mongosh "mongodb://localhost:27017/tbd_lab_3" dbCreate.js
 
-- Para revisar el funcionamiento de triggers y auditoria se debe realizar
+-Cargar datos en las colecciones
+-mongosh "mongodb://localhost:27017/tbd_lab_3" loadData.js
 
-- psql -U postgres -f testTrigger.sql
+-Hacer consultas para vistas guardadas en la memoria
+-mongosh "mongodb://localhost:27017/tbd_lab_3" testAggregate.js
 
-- Ahora se debe entrar a la base de datos y ejecutar 
-- CALL reporte_audit();
-
-- Esto mostrará los datos de las consultas y tipos de queries más realizadas por usuarios.
-
-- Para la sentencia sql, simplemente se debe correr la siguiente linea de comando
-- psql -U postgres -f runStatements.sql
