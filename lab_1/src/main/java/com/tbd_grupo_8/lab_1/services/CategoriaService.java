@@ -2,6 +2,7 @@ package com.tbd_grupo_8.lab_1.services;
 
 import com.tbd_grupo_8.lab_1.entities.Categoria;
 import com.tbd_grupo_8.lab_1.repositories.CategoriaRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,10 @@ public class CategoriaService {
         return categoriaRepository.findAll();
     }
 
-    public Categoria findById(Long id) {
-        return categoriaRepository.findById(id);
+    public Categoria findById(String id) {
+        ObjectId objectId = new ObjectId(id);
+        return categoriaRepository.findById(objectId)
+                .orElseThrow(() -> new RuntimeException("Categoria not found for id: " + id));
     }
 
     public Categoria save(Categoria categoria) {
@@ -26,18 +29,19 @@ public class CategoriaService {
 
     public Categoria update(Categoria categoria) {
         // Verificar si la categoría existe
-        Categoria existingCategoria = categoriaRepository.findById(categoria.getId_categoria());
+        Categoria existingCategoria = categoriaRepository.findById(categoria.getId_categoria())
+                .orElseThrow(() -> new RuntimeException("Categoria not found for id: " + categoria.getId_categoria()));;
         if (existingCategoria != null) {
-            return categoriaRepository.update(categoria);
+            return categoriaRepository.save(categoria);
         }
         return null;
     }
 
-    public boolean delete(Long id) {
+    public boolean delete(String id) {
         // Verificar si la categoría existe
-        Categoria existingCategoria = categoriaRepository.findById(id);
+        Categoria existingCategoria = categoriaRepository.findById(new ObjectId(id)).orElse(null);
         if (existingCategoria != null) {
-            categoriaRepository.delete(id);
+            categoriaRepository.delete(existingCategoria); // Delete by entity
             return true;
         }
         return false;

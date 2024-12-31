@@ -35,12 +35,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -67,11 +61,6 @@
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.12.2</version>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.sql2o</groupId>
-			<artifactId>sql2o</artifactId>
-			<version>1.7.0</version>
 		</dependency>
 		<!-- Spring Security -->
 		<dependency>
@@ -101,10 +90,10 @@
 			<artifactId>jts-core</artifactId>
 			<version>1.19.0</version>
 		</dependency>
-		<dependency> 
-            <groupId>org.springframework.boot</groupId> 
-            <artifactId>spring-boot-starter-data-mongodb</artifactId> 
-        </dependency> 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
 
 	</dependencies>
 

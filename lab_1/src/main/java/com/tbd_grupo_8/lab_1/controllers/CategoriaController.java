@@ -2,6 +2,7 @@ package com.tbd_grupo_8.lab_1.controllers;
 
 import com.tbd_grupo_8.lab_1.entities.Categoria;
 import com.tbd_grupo_8.lab_1.services.CategoriaService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class CategoriaController {
 
     // Obtener una categoría por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Categoria> getCategoriaById(@PathVariable Long id) {
+    public ResponseEntity<Categoria> getCategoriaById(@PathVariable String id) {
         Categoria categoria = categoriaService.findById(id);
         if (categoria != null) {
             return new ResponseEntity<>(categoria, HttpStatus.OK);
@@ -45,8 +46,9 @@ public class CategoriaController {
 
     // Actualizar una categoría existente
     @PutMapping("/{id}")
-    public ResponseEntity<Categoria> updateCategoria(@PathVariable Long id, @RequestBody Categoria categoria) {
-        categoria.setId_categoria(id);
+    public ResponseEntity<Categoria> updateCategoria(@PathVariable String id, @RequestBody Categoria categoria) {
+        ObjectId objectId = new ObjectId(id);
+        categoria.setId_categoria(objectId);
         Categoria updatedCategoria = categoriaService.update(categoria);
         if (updatedCategoria != null) {
             return new ResponseEntity<>(updatedCategoria, HttpStatus.OK);
@@ -56,7 +58,7 @@ public class CategoriaController {
 
     // Eliminar una categoría
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCategoria(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteCategoria(@PathVariable String id) {
         if (categoriaService.delete(id)) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
