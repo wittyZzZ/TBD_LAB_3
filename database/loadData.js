@@ -380,3 +380,476 @@ db.cliente.insertMany([
         coordenadas: { type: "Point", coordinates: [-70.140, -20.210] }
     },
 ]);
+
+// Insertar datos en la colección "TIENDA"
+db.tienda.insertMany([
+    {
+      nombre: "Tienda Costanera Center",
+      direccion: "Av. Andres Bello 2425, Providencia, Santiago",
+      coordenadas: { type: "Point", coordinates: [-70.6056, -33.417] },
+    },
+    {
+      nombre: "Tienda La Reina",
+      direccion: "Av. Blest Gana 5962, La Reina, Santiago",
+      coordenadas: { type: "Point", coordinates: [-70.5685, -33.4553] },
+    },
+    {
+      nombre: "Tienda Las Nieves",
+      direccion: "Los Mallines 1996, Puente Alto, Santiago",
+      coordenadas: {
+        type: "Point", coordinates: [-70.57602256706053, -33.59415557033961],
+      },
+    },
+    {
+      nombre: "Tienda Maipú",
+      direccion: "Rafael Frontaura 5-99, Maipú, Santiago",
+      coordenadas: {
+        type: "Point", coordinates: [-70.75585819880487, -33.514533912551755],
+      },
+    },
+    {
+      nombre: "TecTec - Tecnología y Computación",
+      direccion: "Oficina Contable - Ventas Solo en Nuestra Web - Moneda 812, Santiago, Región Metropolitana",
+      coordenadas: {
+        type: "Point", coordinates: [-70.64745903544836, -33.44157280323984],
+      },
+    },
+    {
+      nombre: "ABCDIN Estado",
+      direccion: "Paseo Estado 73, 8320256 Santiago, Región Metropolitana",
+      coordenadas: {
+        type: "Point", coordinates: [-70.64899653193504, -33.44174084107714],
+      },
+    },
+    {
+      nombre: "Tecnodetodo",
+      direccion: "Av. Domingo Sta. María 3584, 8640722 Renca, Región Metropolitana",
+      coordenadas: {
+        type: "Point", coordinates: [-70.69452693082134, -33.40700876892923],
+      },
+    },
+    {
+      nombre: "Techcenter",
+      direccion: "San Diego 335, 8320000 Santiago, Región Metropolitana",
+      coordenadas: {
+        type: "Point", coordinates: [-70.65089521869716, -33.4484501686001],
+      },
+    },
+    {
+      nombre: "Tecnozona",
+      direccion: "Francisco Bilbao 1344, Local 103, 7500000 Providencia, Región Metropolitana",
+      coordenadas: {
+        type: "Point", coordinates: [-70.6096002299189, -33.437859593913444],
+      },
+    },
+    {
+      nombre: "Informatica y electronica Lufraja - Punto Blue express",
+      direccion: "Alberdi 01781, 8500020 Santiago, Quinta Normal, Región Metropolitana",
+      coordenadas: {
+        type: "Point", coordinates: [-70.70295864279399, -33.42567739504398],
+      },
+    },
+    {
+      nombre: "Tienda Viña Centro",
+      direccion: "Av. Valparaíso 101, Viña del Mar, Valparaíso",
+      coordenadas: { type: "Point", coordinates: [-71.543, -33.02] },
+    },
+    {
+      nombre: "Tienda San Antonio",
+      direccion: "Calle Blanco 505, San Antonio, Valparaíso",
+      coordenadas: { type: "Point", coordinates: [-71.621, -33.59] },
+    },
+    {
+      nombre: "Tienda Concepción Centro",
+      direccion: "Av. Paicaví 1234, Concepción, Biobío",
+      coordenadas: { type: "Point", coordinates: [-73.048, -36.826] },
+    },
+    {
+      nombre: "Tienda Chillán",
+      direccion: "Calle Libertad 345, Chillán, Biobío",
+      coordenadas: { type: "Point", coordinates: [-72.105, -36.606] },
+    },
+    {
+      nombre: "Tienda Temuco Centro",
+      direccion: "Av. Alemania 789, Temuco, La Araucanía",
+      coordenadas: { type: "Point", coordinates: [-72.593, -38.735] },
+    },
+    {
+      nombre: "Tienda Puerto Montt",
+      direccion: "Calle Antonio Varas 123, Puerto Montt, Los Lagos",
+      coordenadas: { type: "Point", coordinates: [-72.936, -41.468] },
+    },
+    {
+      nombre: "Tienda Antofagasta Centro",
+      direccion: "Av. Brasil 456, Antofagasta, Antofagasta",
+      coordenadas: { type: "Point", coordinates: [-70.4, -23.65] },
+    },
+    {
+      nombre: "Tienda Iquique",
+      direccion: "Av. Arturo Prat 789, Iquique, Tarapacá",
+      coordenadas: { type: "Point", coordinates: [-70.142, -20.215] },
+    },
+]);
+
+  // Insertar datos en la colección "REPARTIDOR"
+db.repartidor.insertMany([
+    {
+      nombre: "Tomás Soto",
+      coordenadas: { type: "Point", coordinates: [-70.60836609, -33.50862745] },
+    },
+    {
+      nombre: "Carlos Barra",
+      coordenadas: {
+        type: "Point", coordinates: [-70.6453284199841, -33.45860089018716],
+      },
+    },
+    {
+      nombre: "Benjamín Tapia",
+      coordenadas: {
+        type: "Point", coordinates: [-70.7103335299697, -33.50162765386649],
+      },
+    },
+    {
+      nombre: "Matías Silva",
+      coordenadas: {
+        type: "Point", coordinates: [-70.76772848894939, -33.44778595432466],
+      },
+    },
+    {
+      nombre: "Andrés Garrido",
+      coordenadas: {
+        type: "Point", coordinates: [-71.54492236676212, -33.02332421999087],
+      },
+    },
+    {
+      nombre: "Joaquín Valdés",
+      coordenadas: { type: "Point", coordinates: [-71.538, -33.024] },
+    },
+    {
+      nombre: "Francisca Araya",
+      coordenadas: { type: "Point", coordinates: [-71.62, -33.59] },
+    },
+    {
+      nombre: "Cristóbal Morales",
+      coordenadas: { type: "Point", coordinates: [-73.043, -36.823] },
+    },
+    {
+      nombre: "Daniela Sánchez",
+      coordenadas: { type: "Point", coordinates: [-72.102, -36.609] },
+    },
+    {
+      nombre: "Matías Herrera",
+      coordenadas: { type: "Point", coordinates: [-72.594, -38.732] },
+    },
+    {
+      nombre: "Sofía Pérez",
+      coordenadas: { type: "Point", coordinates: [-72.938, -41.467] },
+    },
+    {
+      nombre: "Felipe Gutiérrez",
+      coordenadas: { type: "Point", coordinates: [-70.399, -23.652] },
+    },
+    {
+      nombre: "Camila Rojas",
+      coordenadas: { type: "Point", coordinates: [-70.141, -20.212] },
+    },
+]);
+
+// Insertar datos en la colección "ORDEN"
+
+// **Primero, obtener las referencias a los clientes, repartidores y tiendas.**
+const cliente1 = db.cliente.findOne({ username: "user_1" });
+const cliente2 = db.cliente.findOne({ username: "user_2" });
+const cliente3 = db.cliente.findOne({ username: "user_3" });
+const cliente12 = db.cliente.findOne({ username: "user_12" });
+const cliente21 = db.cliente.findOne({ username: "user_21" });
+
+const repartidor1 = db.repartidor.findOne({ nombre: "Tomás Soto" });
+const repartidor2 = db.repartidor.findOne({ nombre: "Carlos Barra" });
+const repartidor3 = db.repartidor.findOne({ nombre: "Benjamín Tapia" });
+const repartidor5 = db.repartidor.findOne({ nombre: "Andrés Garrido" });
+
+const tienda1 = db.tienda.findOne({ nombre: "Tienda Costanera Center" });
+const tienda2 = db.tienda.findOne({ nombre: "Tienda La Reina" });
+const tienda5 = db.tienda.findOne({ nombre: "TecTec - Tecnología y Computación" });
+const tienda6 = db.tienda.findOne({ nombre: "ABCDIN Estado" });
+
+db.orden.insertMany([
+    {
+      fecha_orden: new Date(), // revisar
+      estado: "Pagada",
+      id_cliente: cliente1._id,
+      total: 24000.0,
+      id_repartidor: null,
+      id_tienda: tienda1._id,
+    },
+    {
+      fecha_orden: new Date(),
+      estado: "Enviada",
+      id_cliente: cliente2._id,
+      total: 30000.0,
+      id_repartidor: repartidor1._id,
+      id_tienda: tienda2._id,
+    },
+    {
+      fecha_orden: new Date(),
+      estado: "Enviada",
+      id_cliente: cliente21._id,
+      total: 21000.0,
+      id_repartidor: repartidor5._id,
+      id_tienda: tienda5._id,
+    },
+    {
+      fecha_orden: new Date(),
+      estado: "Enviada",
+      id_cliente: cliente12._id,
+      total: 3000.0,
+      id_repartidor: repartidor3._id,
+      id_tienda: tienda6._id,
+    },
+    {
+      fecha_orden: new Date(),
+      estado: "Completada",
+      id_cliente: cliente3._id,
+      total: 15000.0,
+      id_repartidor: repartidor2._id,
+      id_tienda: tienda1._id,
+    },
+]);
+
+// Insertar datos en la colección "DETALLE_ORDEN"
+
+// **Primero, obtener las referencias a las órdenes y productos.**
+
+// Obtener las referencias a las órdenes
+const orden1 = db.orden.findOne({ estado: "Pagada" });
+const orden2 = db.orden.findOne({ estado: "Enviada", id_cliente: cliente2._id });
+const orden3 = db.orden.findOne({ estado: "Enviada", id_cliente: cliente21._id });
+const orden4 = db.orden.findOne({ estado: "Enviada", id_cliente: cliente12._id });
+const orden5 = db.orden.findOne({ estado: "Completada" });
+
+// Obtener las referencias a los productos
+const producto1 = db.producto.findOne({ nombre: "Mouse Silencioso RGB" });
+const producto2 = db.producto.findOne({ nombre: "Teclado DELL" });
+const producto3 = db.producto.findOne({ nombre: "Pendrive 32 GB" });
+
+db.detalle_orden.insertMany([
+    {
+      id_orden: orden1._id,
+      id_producto: producto1._id,
+      cantidad: 2,
+      precio_unitario: producto1.precio,
+    },
+    {
+      id_orden: orden2._id,
+      id_producto: producto2._id,
+      cantidad: 1,
+      precio_unitario: producto2.precio,
+    },
+    {
+      id_orden: orden3._id,
+      id_producto: producto3._id,
+      cantidad: 3,
+      precio_unitario: producto3.precio,
+    },
+    {
+      id_orden: orden4._id,
+      id_producto: producto1._id,
+      cantidad: 1,
+      precio_unitario: producto1.precio,
+    },
+    {
+      id_orden: orden5._id,
+      id_producto: producto2._id,
+      cantidad: 1,
+      precio_unitario: producto2.precio,
+    },
+]);
+
+db.zona_reparto.insertMany([
+    {
+      nombre: "Zona Centro",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-70.68965994719805, -33.419622713280866],
+            [-70.63343880436038, -33.436767034525424],
+            [-70.60684528230406, -33.41658069751892],
+            [-70.58021703839037, -33.48742592788876],
+            [-70.69165479386703, -33.49488968909503],
+            [-70.68965994719805, -33.419622713280866],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Puente Alto",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-70.55608391865024, -33.54342781519428],
+            [-70.6196885668074, -33.54201144195442],
+            [-70.59856793794873, -33.62695273425572],
+            [-70.53423499229359, -33.6061296330255],
+            [-70.55608391865024, -33.54342781519428],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Viña del Mar 1",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-71.54938886905275, -33.000659557745905],
+            [-71.50974757352077, -33.006616685862916],
+            [-71.50745616915475, -33.04504009861507],
+            [-71.56817838485404, -33.023717172932265],
+            [-71.54938886905275, -33.000659557745905],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Santiago",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-70.76233181623087, -33.383944888168216],
+            [-70.66545818578015, -33.36756690642463],
+            [-70.60721514415948, -33.38642613149192],
+            [-70.54203392164673, -33.329007657048415],
+            [-70.49355731556004, -33.33735851993195],
+            [-70.53503729769275, -33.609990046732385],
+            [-70.7064545773473, -33.644944725790786],
+            [-70.86187957211999, -33.5750211910383],
+            [-70.76233181623087, -33.383944888168216],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Viña del Mar 2",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-71.55, -33.01],
+            [-71.53, -33.01],
+            [-71.53, -33.03],
+            [-71.55, -33.03],
+            [-71.55, -33.01],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona San Antonio",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-71.63, -33.58],
+            [-71.61, -33.58],
+            [-71.61, -33.6],
+            [-71.63, -33.6],
+            [-71.63, -33.58],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Concepción",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-73.05, -36.81],
+            [-73.04, -36.81],
+            [-73.04, -36.83],
+            [-73.05, -36.83],
+            [-73.05, -36.81],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Chillán",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-72.11, -36.6],
+            [-72.1, -36.6],
+            [-72.1, -36.62],
+            [-72.11, -36.62],
+            [-72.11, -36.6],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Temuco",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-72.6, -38.72],
+            [-72.59, -38.72],
+            [-72.59, -38.74],
+            [-72.6, -38.74],
+            [-72.6, -38.72],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Puerto Montt",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-72.95, -41.46],
+            [-72.93, -41.46],
+            [-72.93, -41.48],
+            [-72.95, -41.48],
+            [-72.95, -41.46],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Antofagasta",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-70.41, -23.64],
+            [-70.39, -23.64],
+            [-70.39, -23.66],
+            [-70.41, -23.66],
+            [-70.41, -23.64],
+          ],
+        ],
+      },
+    },
+    {
+      nombre: "Zona Iquique",
+      poligono: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-70.15, -20.2],
+            [-70.13, -20.2],
+            [-70.13, -20.22],
+            [-70.15, -20.22],
+            [-70.15, -20.2],
+          ],
+        ],
+      },
+    },
+]);
