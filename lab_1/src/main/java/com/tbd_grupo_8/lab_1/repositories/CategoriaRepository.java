@@ -8,6 +8,6 @@ import org.bson.types.ObjectId;
 import java.util.List;
 
 @Repository
-public interface CategoriaRepository extends MongoRepository<Categoria, ObjectId> {
+public interface CategoriaRepository extends MongoRepository<Categoria, String> {
 
 }

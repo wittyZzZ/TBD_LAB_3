@@ -18,8 +18,7 @@ public class CategoriaService {
     }
 
     public Categoria findById(String id) {
-        ObjectId objectId = new ObjectId(id);
-        return categoriaRepository.findById(objectId)
+        return categoriaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Categoria not found for id: " + id));
     }
 
@@ -39,7 +38,7 @@ public class CategoriaService {
 
     public boolean delete(String id) {
         // Verificar si la categoría existe
-        Categoria existingCategoria = categoriaRepository.findById(new ObjectId(id)).orElse(null);
+        Categoria existingCategoria = categoriaRepository.findById(id).orElse(null);
         if (existingCategoria != null) {
             categoriaRepository.delete(existingCategoria); // Delete by entity
             return true;
