@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class Orden {
     @Id
     private String id_orden;
-    private String fecha_orden;
+    private LocalDateTime fecha_orden;
     private String estado;
     private ObjectId id_cliente;
     private int total;

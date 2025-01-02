@@ -14,8 +14,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class DetalleOrden {
     @Id
     private String id_detalle;
-    private String id_orden;
-    private String id_producto;
+    private ObjectId id_orden;
+    private ObjectId id_producto;
     private Integer cantidad;
     private int precio_unitario;
 }

@@ -3,15 +3,17 @@ package com.tbd_grupo_8.lab_1.dto;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.geo.GeoJsonPolygon;
+
+import java.time.LocalDateTime;
 
 @Data
 @Setter
 @Getter
 public class DeliveryPolygonDTO {
-    private int id_repartidor;
+    private String id_repartidor;
     private String nombre;
-    private int id_orden;
-    private String fecha_orden;
-    private double latitude;
-    private double longitude;
+    private String id_orden;
+    private LocalDateTime fecha_orden;
+    private GeoJsonPolygon poligono;
 }

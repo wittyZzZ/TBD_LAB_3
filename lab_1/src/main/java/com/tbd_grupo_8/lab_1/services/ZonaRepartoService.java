@@ -32,7 +32,7 @@ public class ZonaRepartoService {
         zonaRepartoRepository.deleteById(id);
     }
 
-    public List<DeliveryPolygonDTO> getDeliveriesInPolygon(int id_poligono) {
+    public List<DeliveryPolygonDTO> getDeliveriesInPolygon(String id_poligono) {
         return null; //zonaRepartoRepository.getDeliveriesInPolygon(id_poligono);
     }
 }

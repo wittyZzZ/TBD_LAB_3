@@ -38,11 +38,8 @@ public class OrdenController {
         try {
             Orden newOrden = new Orden();
 
-            // Formatear la fecha como "dd/MM/yy HH:mm:ss"
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss");
-            String formattedDate = LocalDateTime.now().format(formatter);
 
-            newOrden.setFecha_orden(formattedDate); // Asignar la fecha como String
+            newOrden.setFecha_orden(LocalDateTime.now()); // Asignar la fecha como String
             newOrden.setEstado("Pagada");
             newOrden.setId_cliente(ordenDto.getId_cliente());
             newOrden.setId_tienda(ordenDto.getId_tienda());

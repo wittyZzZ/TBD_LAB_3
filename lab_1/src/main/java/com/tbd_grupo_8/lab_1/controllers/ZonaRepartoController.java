@@ -69,7 +69,7 @@ public class ZonaRepartoController {
     }
 
     @GetMapping("/deliveryinpolygon")
-    public ResponseEntity<List<DeliveryPolygonDTO>> getDeliveriesInPolygon(@RequestParam int id_poligono) {
+    public ResponseEntity<List<DeliveryPolygonDTO>> getDeliveriesInPolygon(@RequestParam String id_poligono) {
         List<DeliveryPolygonDTO> result = zonaRepartoService.getDeliveriesInPolygon(id_poligono);
         return ResponseEntity.ok(result);
     }

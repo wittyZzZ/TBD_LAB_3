@@ -51,6 +51,6 @@ public class OrdenService {
     public List<OrderWithinDTO> getOrdersWithinRadius(String idTienda, double radiusKm){
         Tienda tienda = mongoTemplate.findById(idTienda, Tienda.class);
         Point tiendaLocation = tienda.getCoordenadas();
-        return clienteRepository.findOrdersWithinRadius(tiendaLocation.getX(), tiendaLocation.getY(), radiusKm);
+        return clienteRepository.findOrdersWithinRadius(tiendaLocation.getX(), tiendaLocation.getY(), radiusKm*1000);
     }
 }

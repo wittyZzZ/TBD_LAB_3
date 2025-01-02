@@ -3,6 +3,7 @@ package com.tbd_grupo_8.lab_1.controllers;
 import com.tbd_grupo_8.lab_1.entities.DetalleOrden;
 import com.tbd_grupo_8.lab_1.repositories.DetalleOrdenRepository;
 import com.tbd_grupo_8.lab_1.services.DetalleOrdenService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,13 +37,13 @@ public class DetalleOrdenController {
     @PostMapping("/")
     public ResponseEntity<List<DetalleOrden>> createDetalleOrden(@RequestBody Map<String, Object> payload) {
         try {
-            String idOrden = payload.get("id_orden").toString();
+            ObjectId idOrden = new ObjectId(payload.get("id_orden").toString());
             // Convertir el carrito recibido en una lista de DetalleOrden
             List<DetalleOrden> detalles = ((List<Map<String, Object>>) payload.get("carrito")).stream()
                     .map(item -> {
                         DetalleOrden detalle = new DetalleOrden();
                         detalle.setId_orden(idOrden);
-                        detalle.setId_producto(item.get("id_producto").toString());
+                        detalle.setId_producto(new ObjectId(item.get("id_producto").toString()));
                         detalle.setCantidad(Integer.parseInt(item.get("cantidad").toString()));
                         detalle.setPrecio_unitario(Integer.parseInt(item.get("precio_unitario").toString()));
                         return detalle;

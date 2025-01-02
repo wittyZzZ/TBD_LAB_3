@@ -7,6 +7,10 @@
 -Cargar datos en las colecciones
 -mongosh "mongodb://localhost:27017/tbd_lab_3" loadData.js
 
--Hacer consultas para vistas guardadas en la memoria
--mongosh "mongodb://localhost:27017/tbd_lab_3" testAggregate.js
+Para probar algunas funcionalidades en postman y ver la estructura que retornan se deja como ejemplo
+-http://localhost:8080/api/orden/inradius?idTienda=677615165943a342ea4eebb3&radiusKm=10
+Para ver las ordenes dentro del radio de una tienda
+
+-http://localhost:8080/api/repartidor/inradius?id_tienda_input=677615165943a342ea4eebb3&radius_km=10
+Para ver los repartidores alrededor de una tienda
 
