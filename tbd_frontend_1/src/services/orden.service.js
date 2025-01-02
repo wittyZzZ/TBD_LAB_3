@@ -8,6 +8,10 @@ const getById = id => {
   return httpClient.get(`/api/orden/${id}`);
 };
 
+const getByClientId = id => {
+  return httpClient.get(`/api/orden/client/${id}`);
+};
+
 const create = (orden) => {
     return httpClient.post('/api/orden/crear', orden);
   };
@@ -20,7 +24,6 @@ const remove = (id) => {
   return httpClient.delete(`/api/orden/${id}`);
 };
 
-
 const getOrdersWithinRadius = (idTienda, radiusKm) => {
   return httpClient.get('/api/orden/inradius', {
     params: {
@@ -30,4 +33,4 @@ const getOrdersWithinRadius = (idTienda, radiusKm) => {
   });
 };
 
-export default { getAll, getById, create, update, remove, getOrdersWithinRadius };
+export default { getAll, getById, getByClientId, create, update, remove, getOrdersWithinRadius };

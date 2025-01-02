@@ -19,7 +19,7 @@
             <v-toolbar flat>
               <v-toolbar-title>Órdenes</v-toolbar-title>
               <v-spacer></v-spacer>
-              <!-- <v-btn @click="openDialog()" color="primary">Nueva Orden</v-btn> -->
+
             </v-toolbar>
           </template>
           <template #item.acciones="{ item }">

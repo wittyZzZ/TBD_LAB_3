@@ -14,19 +14,22 @@ import OrdersByStore from '@/views/OrdersByStore.vue'
 import DeliveryBy30 from '@/views/DeliveryBy30.vue'
 import DeliveryByZone from '@/views/DeliveryByZone.vue'
 import ClientsByRadius from '@/views/ClientsByRadius.vue'
+import ClientList from '@/views/ClientList.vue'
+import ClientOrders from '@/views/ClientOrders.vue'
+import OrderDetails from '@/views/OrderDetails.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: HomeView,
-    meta: { requiresAuth: true } 
+    // meta: { requiresAuth: true } 
   },
   {
     path: '/about',
     name: 'About',
     component: AboutView,
-    meta: { requiresAuth: true } 
+    // meta: { requiresAuth: true } 
   },
   {
     path: '/login',
@@ -93,6 +96,21 @@ const routes = [
     path: '/clientsradius',
     name: 'ClientsByRadius',
     component: ClientsByRadius
+  },
+  {
+    path: '/clientlist',
+    name: 'ClientList',
+    component: ClientList
+  },
+  {
+    path: '/clientorders',
+    name: 'ClientOrders',
+    component: ClientOrders
+  },
+  {
+    path: '/orderdetails',
+    name: 'OrderDetails',
+    component: OrderDetails
   },
   {
     path: '/:pathMatch(.*)*', // Ruta catch-all
