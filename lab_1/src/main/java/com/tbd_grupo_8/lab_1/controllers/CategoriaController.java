@@ -20,7 +20,7 @@ public class CategoriaController {
     @GetMapping("/")
     public ResponseEntity<List<Categoria>> getAllCategorias() {
         List<Categoria> categorias = categoriaService.findAll();
-        return new ResponseEntity<>(categorias, HttpStatus.OK);
+        return ResponseEntity.ok(categorias);
     }
 
     // Obtener una categoría por ID
@@ -28,7 +28,7 @@ public class CategoriaController {
     public ResponseEntity<Categoria> getCategoriaById(@PathVariable String id) {
         Categoria categoria = categoriaService.findById(id);
         if (categoria != null) {
-            return new ResponseEntity<>(categoria, HttpStatus.OK);
+            return ResponseEntity.ok(categoria);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
@@ -50,7 +50,7 @@ public class CategoriaController {
         categoria.setId_categoria(id);
         Categoria updatedCategoria = categoriaService.update(categoria);
         if (updatedCategoria != null) {
-            return new ResponseEntity<>(updatedCategoria, HttpStatus.OK);
+            return ResponseEntity.ok(updatedCategoria);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }

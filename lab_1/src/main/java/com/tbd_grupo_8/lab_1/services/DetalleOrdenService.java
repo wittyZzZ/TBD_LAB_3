@@ -17,7 +17,7 @@ public class DetalleOrdenService {
     private ProductoRepository productoRepository;
     public List<DetalleOrden> findAll() { return detalleOrdenRepository.findAll(); }
     public DetalleOrden findById(String id) { return detalleOrdenRepository.findById(id).orElse(null); }
-    public DetalleOrden findByOrdenId(String id) { return detalleOrdenRepository.findById_orden(id); }
+//    public DetalleOrden findByOrdenId(String id) { return detalleOrdenRepository.findById_orden(id); }
     public List<DetalleOrden> guardarDetalles(List<DetalleOrden> detalleOrdenList) {
 
         //En vez de hacer un saveAll, se hace uno por uno para poder modificar los stocks

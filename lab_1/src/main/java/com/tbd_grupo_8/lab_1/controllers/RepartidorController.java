@@ -32,19 +32,19 @@ public class RepartidorController {
     }
 
     @GetMapping("/{id}")
-    public Repartidor getRepartidor(@PathVariable Long id) {
+    public Repartidor getRepartidor(@PathVariable String id) {
         return repartidorService.getById(id);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteRepartidor(@PathVariable Long id) {
+    public String deleteRepartidor(@PathVariable String id) {
         repartidorService.delete(id);
         return "Repartidor eliminado";
     }
 
     @GetMapping("/inradius")
     public ResponseEntity<List<Repartidor>> getRepartidoresWithinradius(
-            @RequestParam int id_tienda_input,
+            @RequestParam String id_tienda_input,
             @RequestParam double radius_km) {
         List<Repartidor> repartidores = repartidorService.getRepartidoresWithinradius(id_tienda_input,radius_km);
         return ResponseEntity.ok(repartidores);

@@ -15,23 +15,24 @@ public class ZonaRepartoService {
     private ZonaRepartoRepository zonaRepartoRepository;
 
     public List<ZonaReparto> getAll() {
-        return zonaRepartoRepository.getAllZonas();
+        return zonaRepartoRepository.findAll(); //.getAllZonas();
     }
 
-    public ZonaReparto getById(Long id) {
-        return zonaRepartoRepository.findById(id);
+    public ZonaReparto getById(String id) {
+        return zonaRepartoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("ZonaReparto not found for id: " + id));
     }
 
     public ZonaReparto saveZonaReparto(ZonaReparto zonaReparto) {
-        return zonaRepartoRepository.createZonaReparto(zonaReparto);
+        return zonaRepartoRepository.save(zonaReparto);
     }
 
-    public ZonaReparto updateZonaReparto(ZonaReparto zonaReparto) { return zonaRepartoRepository.updateZonaReparto(zonaReparto); }
-    public ZonaReparto deleteZonaReparto(Long id) {
-        return zonaRepartoRepository.deleteZonaReparto(id);
+    public ZonaReparto updateZonaReparto(ZonaReparto zonaReparto) { return zonaRepartoRepository.save(zonaReparto); }
+    public void deleteZonaReparto(String id) {
+        zonaRepartoRepository.deleteById(id);
     }
 
     public List<DeliveryPolygonDTO> getDeliveriesInPolygon(int id_poligono) {
-        return zonaRepartoRepository.getDeliveriesInPolygon(id_poligono);
+        return null; //zonaRepartoRepository.getDeliveriesInPolygon(id_poligono);
     }
 }

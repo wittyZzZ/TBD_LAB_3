@@ -7,8 +7,8 @@ import org.springframework.data.mongodb.repository.Aggregation;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.sql2o.Connection;
-import org.sql2o.Sql2o;
+//import org.sql2o.Connection;
+//import org.sql2o.Sql2o;
 
 import java.util.List;
 

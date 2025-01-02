@@ -10,7 +10,7 @@ import java.awt.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Repartidor {
-    private Long id_repartidor;
+    private String id_repartidor;
     private String nombre;
     private double latitude;
     private double longitude;

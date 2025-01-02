@@ -26,7 +26,7 @@ public class ZonaRepartoController {
 
     // Obtener una zona de reparto por ID
     @GetMapping("/{id}")
-    public ResponseEntity<ZonaReparto> getZonaRepartoById(@PathVariable long id) {
+    public ResponseEntity<ZonaReparto> getZonaRepartoById(@PathVariable String id) {
         ZonaReparto zona = zonaRepartoService.getById(id);
         if (zona != null) {
             return new ResponseEntity<>(zona, HttpStatus.OK);
@@ -47,7 +47,7 @@ public class ZonaRepartoController {
 
     // Actualizar una zona de reparto existente
     @PutMapping("/{id}")
-    public ResponseEntity<ZonaReparto> updateZonaReparto(@PathVariable long id, @RequestBody ZonaReparto zonaReparto) {
+    public ResponseEntity<ZonaReparto> updateZonaReparto(@PathVariable String id, @RequestBody ZonaReparto zonaReparto) {
         zonaReparto.setId_zona(id);
         ZonaReparto updatedZona = zonaRepartoService.updateZonaReparto(zonaReparto);
         if (updatedZona != null) {
@@ -58,12 +58,14 @@ public class ZonaRepartoController {
 
     // Eliminar una zona de reparto
     @DeleteMapping("/{id}")
-    public ResponseEntity<ZonaReparto> deleteZonaReparto(@PathVariable long id) {
-        ZonaReparto deletedZona = zonaRepartoService.deleteZonaReparto(id);
-        if (deletedZona != null) {
-            return new ResponseEntity<>(deletedZona, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    public ResponseEntity<ZonaReparto> deleteZonaReparto(@PathVariable String id) {
+//        ZonaReparto deletedZona = zonaRepartoService.deleteZonaReparto(id);
+//        if (deletedZona != null) {
+//            return new ResponseEntity<>(deletedZona, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        zonaRepartoService.deleteZonaReparto(id);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
     @GetMapping("/deliveryinpolygon")

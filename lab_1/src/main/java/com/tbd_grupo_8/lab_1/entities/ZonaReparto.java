@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ZonaReparto {
-    private Long id_zona;
+    private String id_zona;
     private String nombre;
     private String poligono; // Se almacena como WKT (Well-Known Text) en PostGIS
 }
