@@ -14,22 +14,22 @@ public class TiendaService {
     private TiendaRepository tiendaRepository;
 
     public void create(Tienda tienda) {
-        tiendaRepository.create(tienda);
+        tiendaRepository.save(tienda);
     }
 
     public List<Tienda> getAll() {
-        return tiendaRepository.getAll();
+        return tiendaRepository.findAll();
     }
 
-    public Tienda getById(Long id) {
-        return tiendaRepository.getById(id);
+    public Tienda getById(String id) {
+        return tiendaRepository.findById(id).orElse(null);
     }
 
     public void update(Tienda tienda) {
-        tiendaRepository.update(tienda);
+        tiendaRepository.save(tienda);
     }
 
-    public void delete(Long id) {
-        tiendaRepository.delete(id);
+    public void delete(String id) {
+        tiendaRepository.deleteById(id);
     }
 }

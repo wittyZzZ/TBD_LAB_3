@@ -23,7 +23,7 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> getClienteById(@PathVariable long id) {
+    public ResponseEntity<Cliente> getClienteById(@PathVariable String id) {
         Cliente cliente = clienteService.getById(id);
         if (cliente != null) {
             return new ResponseEntity<>(cliente, HttpStatus.OK);
@@ -42,7 +42,7 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> updateCliente(@PathVariable long id, @RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> updateCliente(@PathVariable String id, @RequestBody Cliente cliente) {
         cliente.setId_cliente(id);
         Cliente updatedCliente = clienteService.updateCliente(cliente);
         if (updatedCliente != null) {
@@ -52,8 +52,9 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Cliente> deleteCliente(@PathVariable long id) {
-        Cliente deletedCliente = clienteService.deleteCliente(id);
+    public ResponseEntity<Cliente> deleteCliente(@PathVariable String id) {
+        clienteService.deleteCliente(id);
+        Cliente deletedCliente = clienteService.getById(id);
         if (deletedCliente != null) {
             return new ResponseEntity<>(deletedCliente, HttpStatus.OK);
         }

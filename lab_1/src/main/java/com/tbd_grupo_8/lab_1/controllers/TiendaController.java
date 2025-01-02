@@ -33,13 +33,13 @@ public class TiendaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Tienda> getTienda(@PathVariable Long id) {
+    public ResponseEntity<Tienda> getTienda(@PathVariable String id) {
         Tienda tienda = tiendaService.getById(id);
         return ResponseEntity.ok(tienda);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteTienda(@PathVariable Long id) {
+    public ResponseEntity<?> deleteTienda(@PathVariable String id) {
         tiendaService.delete(id);
         return ResponseEntity.ok("Tienda eliminada");
     }

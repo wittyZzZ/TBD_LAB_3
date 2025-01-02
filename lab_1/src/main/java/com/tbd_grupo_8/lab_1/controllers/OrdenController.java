@@ -25,7 +25,7 @@ public class OrdenController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Orden> getOrdenById(@PathVariable long id) {
+    public ResponseEntity<Orden> getOrdenById(@PathVariable String id) {
         Orden orden = ordenService.findById(id);
         if (orden != null) {
             return new ResponseEntity<>(orden, HttpStatus.OK);
@@ -57,7 +57,7 @@ public class OrdenController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Orden> updateOrden(@PathVariable long id, @RequestBody Orden orden) {
+    public ResponseEntity<Orden> updateOrden(@PathVariable String id, @RequestBody Orden orden) {
         orden.setId_orden(id);
         Orden saved = ordenService.update(orden);
         if (saved != null) {
@@ -67,7 +67,7 @@ public class OrdenController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Orden> deleteOrden(@PathVariable long id) {
+    public ResponseEntity<Orden> deleteOrden(@PathVariable String id) {
         if (ordenService.delete(id)) {
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         }
@@ -76,7 +76,7 @@ public class OrdenController {
 
     @GetMapping("/inradius")
     public ResponseEntity<List<OrderWithinDTO>> getOrdersWithinRadius(
-            @RequestParam int idTienda,
+            @RequestParam String idTienda,
             @RequestParam double radiusKm) {
         List<OrderWithinDTO> ordenes = ordenService.getOrdersWithinRadius(idTienda, radiusKm);
         return ResponseEntity.ok(ordenes);

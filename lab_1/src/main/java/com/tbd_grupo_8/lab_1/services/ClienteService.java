@@ -13,11 +13,11 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     public List<Cliente> getAll() {
-        return clienteRepository.getAllClientes();
+        return clienteRepository.findAll();
     }
 
-    public Cliente getById(Long id) {
-        return clienteRepository.findByID(id);
+    public Cliente getById(String id) {
+        return clienteRepository.findById(id).orElse(null);
     }
 
     public Cliente getByUsername(String username) {
@@ -29,11 +29,11 @@ public class ClienteService {
     }
 
     public Cliente saveCliente(Cliente cliente) {
-        return clienteRepository.createCliente(cliente);
+        return clienteRepository.save(cliente);
     }
 
-    public Cliente updateCliente(Cliente cliente) { return clienteRepository.updateCliente(cliente); }
-    public Cliente deleteCliente(Long id) {
-        return clienteRepository.deleteCliente(id);
+    public Cliente updateCliente(Cliente cliente) { return clienteRepository.save(cliente); }
+    public void deleteCliente(String id) {
+        clienteRepository.deleteById(id);
     }
 }
