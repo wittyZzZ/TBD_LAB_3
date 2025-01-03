@@ -14,24 +14,15 @@
           <h4>Direcciones</h4>
           <v-container>
             <v-row v-for="(direccion, index) in cliente.direccion" :key="direccion.id_direccion">
-              <v-col cols="12" md="6">
+              <v-col cols="12" md="9">
                 <v-text-field
-                  v-model="direccion.calle"
-                  label="Calle"
+                  v-model="direccion.direccion"
+                  label="Dirección Completa"
+                  placeholder="Ejemplo: Calle 123, Ciudad XYZ"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" md="3">
-                <v-text-field
-                  v-model="direccion.ciudad"
-                  label="Ciudad"
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" md="3">
-                <v-btn
-                  color="red"
-                  icon
-                  @click="eliminarDireccion(index)"
-                >
+                <v-btn color="red" icon @click="eliminarDireccion(index)">
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>
               </v-col>
