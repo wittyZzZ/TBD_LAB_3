@@ -57,6 +57,7 @@ export default {
       // Vacía el carrito y elimina el valor de localStorage
       this.carrito = [];
       localStorage.removeItem("carrito");
+      localStorage.removeItem("user");
     },
 
     agregarAlCarrito(producto) {

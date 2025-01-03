@@ -49,7 +49,7 @@
 </template>
 
 <script>
-
+import { jwtDecode } from "jwt-decode";
 import clienteService from '@/services/cliente.service';
 
 export default {
@@ -60,7 +60,6 @@ export default {
     }, 
 
     mounted() {
-
         // Se obtienen los clientes
         clienteService.getAll()
         .then(response => {
@@ -70,7 +69,6 @@ export default {
         .catch(error => {
             console.error('Error al obtener los clientes:', error); // Manejamos errores
         });
-    
     },
 
     methods: {

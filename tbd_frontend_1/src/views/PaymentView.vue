@@ -104,7 +104,6 @@ export default {
     if (token) {
       const decodedToken = jwtDecode(token);
       this.orden.id_cliente = decodedToken.id_cliente; // Almacena el id del cliente logueado
-      
     }
   },
 

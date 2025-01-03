@@ -1,4 +1,5 @@
 import httpClient from "../http-common"
+import { jwtDecode } from "jwt-decode";
 
 const login = (loginDto) => {
   return httpClient.post('/auth/login', loginDto)
@@ -9,6 +10,18 @@ const login = (loginDto) => {
         // Guardar solo el token en localStorage
         localStorage.setItem('token', `Bearer ${token}`);
         console.log("Token guardado en localStorage:", token);
+        const decodedToken = jwtDecode(token);
+        console.log("CONTENIDO TOKEN",decodedToken);
+        const user = {
+          id_cliente: decodedToken.id_cliente,
+          username: decodedToken.username,
+          direccion: JSON.parse(decodedToken.direccion),
+          email: decodedToken.email,
+          telefono: decodedToken.telefono,
+        }
+        console.log("OBJ LOGGED USER",user);
+        // Guardar el usuario en localStorage
+        localStorage.setItem('user', JSON.stringify(user));
       } else {
         console.error("No se recibió el token en el header 'Authorization'");
       }
