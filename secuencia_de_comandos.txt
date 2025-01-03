@@ -14,3 +14,5 @@ Para ver las ordenes dentro del radio de una tienda
 -http://localhost:8080/api/repartidor/inradius?id_tienda_input=677615165943a342ea4eebb3&radius_km=10
 Para ver los repartidores alrededor de una tienda
 
+**RECORDAR CAMBIAR LA ID DE TIENDA POR ALGUNA CREADA POR SUS BASES DE DATOS**
+

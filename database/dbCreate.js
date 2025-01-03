@@ -62,7 +62,25 @@ db.createCollection("categoria", {
             required: ["username", "direccion", "email", "contrasena", "telefono", "rol", "coordenadas"],
             properties: {
                 username: { bsonType: "string", description: "Debe ser un string y es requerido" },
-                direccion: { bsonType: "string", description: "Debe ser un string y es requerido" },
+                direccion: {
+                    bsonType: "array",
+                    description: "Debe ser un array de objetos",
+                    items: {
+                        bsonType: "object",
+                        required: ["direccion", "coordinates"],
+                        properties: {
+                            id_direccion: { bsonType: "objectId", description: "Debe ser un ObjectId" },
+                            direccion: { bsonType: "string", description: "Debe ser un string y es requerido" },
+                            coordinates: {
+                                bsonType: "array",
+                                minItems: 2,
+                                maxItems: 2,
+                                items: { bsonType: "double" },
+                                description: "Debe ser un array con exactamente dos elementos (latitud y longitud)"
+                            }
+                        }
+                    }
+                },
                 email: { bsonType: "string", pattern: "@.*\\.", description: "Debe ser un email válido" },
                 contrasena: { bsonType: "string", description: "Debe ser un string y es requerido" },
                 telefono: { bsonType: "string", description: "Debe ser un string y es requerido" },
@@ -76,7 +94,8 @@ db.createCollection("categoria", {
                             bsonType: "array",
                             minItems: 2,
                             maxItems: 2,
-                            items: { bsonType: "double" }
+                            items: { bsonType: "double" },
+                            description: "Debe ser un array con exactamente dos elementos (latitud y longitud)"
                         }
                     }
                 }

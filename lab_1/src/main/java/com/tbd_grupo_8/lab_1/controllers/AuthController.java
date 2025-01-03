@@ -5,6 +5,7 @@ import com.tbd_grupo_8.lab_1.dto.LoginDto;
 import com.tbd_grupo_8.lab_1.dto.RegisterDto;
 import com.tbd_grupo_8.lab_1.entities.Cliente;
 import com.tbd_grupo_8.lab_1.services.ClienteService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
@@ -60,7 +65,16 @@ public class AuthController {
             newCliente.setRol(registerDto.getRol());
             newCliente.setEmail(registerDto.getEmail());
             newCliente.setTelefono(registerDto.getTelefono());
-            newCliente.setDireccion(registerDto.getDireccion());
+
+            Cliente.Direccion direccionObj = new Cliente.Direccion();
+            direccionObj.setId_direccion(new ObjectId()); // Generate a unique ObjectId
+            direccionObj.setDireccion(registerDto.getDireccion());
+            direccionObj.setCoordinates(new ArrayList<>(Arrays.asList(-70.0, -34.0)));
+
+            List<Cliente.Direccion> direccionList = new ArrayList<>();
+            direccionList.add(direccionObj);
+
+            newCliente.setDireccion(direccionList);
             clienteService.saveCliente(newCliente);
             return ResponseEntity.ok().build();
         }

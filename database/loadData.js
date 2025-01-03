@@ -114,7 +114,13 @@ db.producto.insertMany([
 db.cliente.insertMany([
     {
         username: "user_1",
-        direccion: "Calle 123, Santiago Centro",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle 123, Santiago Centro",
+              coordinates: [-70.6450, -33.4550]
+          }
+      ],
         email: "carlos.mendoza@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-1234",
@@ -123,7 +129,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_2",
-        direccion: "Av. Central 45, Providencia",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Central 45, Providencia",
+              coordinates: [-70.6410, -33.4520]
+          }
+      ],
         email: "lucia.fernandez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-5678",
@@ -132,7 +144,18 @@ db.cliente.insertMany([
     },
     {
         username: "user_3",
-        direccion: "Calle Los Robles 85, Las Condes",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Central 45, Providencia",
+              coordinates: [-70.5750, -33.4150]
+          },
+          {
+            id_direccion: ObjectId(),
+            direccion: "Av. Cristóbal Colón",
+            coordinates: [-70.73422, -34.1722]
+          }
+      ],
         email: "andres.castillo@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-8765",
@@ -141,7 +164,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_4",
-        direccion: "Av. Los Alamos 10, Ñuñoa",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Los Alamos 10, Ñuñoa",
+              coordinates: [-70.6150, -33.4630]
+          }
+      ],
         email: "maria.lopez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-4321",
@@ -150,7 +179,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_5",
-        direccion: "Calle Primavera 21, Ñuñoa",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Primavera 21, Ñuñoa",
+              coordinates: [-70.6180, -33.4660]
+          }
+      ],
         email: "jorge.martinez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-2468",
@@ -159,7 +194,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_6",
-        direccion: "Av. La Esperanza 99, Maipú",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. La Esperanza 99, Maipú",
+              coordinates: [-70.7550, -33.5020]
+          }
+      ],
         email: "ana.ruiz@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-1357",
@@ -168,7 +209,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_7",
-        direccion: "Calle Las Palmas 7, Maipú",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Las Palmas 7, Maipú",
+              coordinates: [-70.7570, -33.5070]
+          }
+      ],
         email: "pedro.gonzalez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-9753",
@@ -177,7 +224,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_8",
-        direccion: "Calle San Juan 88, Renca",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle San Juan 88, Renca",
+              coordinates: [-70.7300, -33.4000]
+          }
+      ],
         email: "laura.gil@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-3579",
@@ -186,7 +239,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_9",
-        direccion: "Av. Norte 66, Pudahuel",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Norte 66, Pudahuel",
+              coordinates: [-70.8000, -33.4300]
+          }
+      ],
         email: "sofia.duarte@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-9632",
@@ -195,7 +254,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_10",
-        direccion: "Calle del Sol 41, La Florida",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle del Sol 41, La Florida",
+              coordinates: [-70.5900, -33.5400]
+          }
+      ],
         email: "ramon.perez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-4682",
@@ -204,7 +269,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_11",
-        direccion: "Av. Oriente 23, La Florida",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Oriente 23, La Florida",
+              coordinates: [-70.5950, -33.5350]
+          }
+      ],
         email: "carmen.vazquez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-7524",
@@ -213,7 +284,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_12",
-        direccion: "Calle Pino 12, Peñalolén",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Pino 12, Peñalolén",
+              coordinates: [-70.5500, -33.4900]
+          }
+      ],
         email: "diego.sanchez@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-6142",
@@ -222,7 +299,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_13",
-        direccion: "Av. Libertad 14, Santiago Centro",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Libertad 14, Santiago Centro",
+              coordinates: [-70.6500, -33.4510]
+          }
+      ],
         email: "paula.reyes@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-8237",
@@ -231,7 +314,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_14",
-        direccion: "Calle Nueva 33, Providencia",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Nueva 33, Providencia",
+              coordinates: [-70.6380, -33.4390]
+          }
+      ],
         email: "alberto.morales@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-7481",
@@ -240,7 +329,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_15",
-        direccion: "Av. Los Pinos 54, Ñuñoa",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Los Pinos 54, Ñuñoa",
+              coordinates: [-70.6200, -33.4700]
+          }
+      ],
         email: "marta.salinas@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-2153",
@@ -249,7 +344,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_16",
-        direccion: "Calle Cedros 98, Santiago Centro",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Cedros 98, Santiago Centro",
+              coordinates: [-70.6520, -33.4525]
+          }
+      ],
         email: "luis.rojas@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-9425",
@@ -258,7 +359,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_17",
-        direccion: "Av. Amanecer 60, Renca",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Amanecer 60, Renca",
+              coordinates: [-70.7280, -33.4020]
+          }
+      ],
         email: "gloria.vega@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-7893",
@@ -267,7 +374,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_18",
-        direccion: "Calle Luna 67, Ñuñoa",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Luna 67, Ñuñoa",
+              coordinates: [-70.6170, -33.4640]
+          }
+      ],
         email: "tomas.rivera@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-1568",
@@ -276,7 +389,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_19",
-        direccion: "Av. Principal 5, Maipú",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Av. Principal 5, Maipú",
+              coordinates: [-70.7500, -33.5000]
+          }
+      ],
         email: "isabel.romero@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-8947",
@@ -285,7 +404,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_20",
-        direccion: "Calle Real 19, Peñalolén",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Real 19, Peñalolén",
+              coordinates: [-70.5450, -33.4920]
+          }
+      ],
         email: "vicente.navarro@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-3256",
@@ -294,7 +419,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_21",
-        direccion: "24 Nte., Viña del Mar",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "24 Nte., Viña del Mar",
+              coordinates: [-71.54226306197091, -33.002067847491986]
+          }
+      ],
         email: "vicente.peralta@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-3256",
@@ -304,7 +435,13 @@ db.cliente.insertMany([
     //Region valparaiso
     {
         username: "user_22",
-        direccion: "Calle Lima 202, Viña del Mar",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Lima 202, Viña del Mar",
+              coordinates: [-71.540, -33.025]
+          }
+      ],
         email: "user.vina1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-1111",
@@ -313,7 +450,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_23",
-        direccion: "Calle Miraflores 101, San Antonio",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Miraflores 101, San Antonio",
+              coordinates: [-71.618, -33.585]
+          }
+      ],
         email: "user.san1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-2222",
@@ -323,7 +466,13 @@ db.cliente.insertMany([
     //Region Biobio
     {
         username: "user_24",
-        direccion: "Calle Freire 404, Concepción",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Freire 404, Concepción",
+              coordinates: [-73.045, -36.820]
+          }
+      ],
         email: "user.conce1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-3333",
@@ -332,7 +481,13 @@ db.cliente.insertMany([
     },
     {
         username: "user_25",
-        direccion: "Calle Independencia 306, Chillán",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Independencia 306, Chillán",
+              coordinates: [-72.100, -36.610]
+          }
+      ],
         email: "user.chillan1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-3333",
@@ -342,7 +497,13 @@ db.cliente.insertMany([
     // Region La Araucania
     {
         username: "user_26",
-        direccion: "Calle Alemania 1201, Temuco",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Alemania 1201, Temuco",
+              coordinates: [-72.590, -38.730]
+          }
+      ],
         email: "user.temuco1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-5555",
@@ -352,7 +513,13 @@ db.cliente.insertMany([
     // Region Los Lagos
     {
         username: "user_27",
-        direccion: "Calle Chinquihue 321, Puerto Montt",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Chinquihue 321, Puerto Montt",
+              coordinates: [-72.940, -41.465]
+          }
+      ],
         email: "user.pm1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-6666",
@@ -362,7 +529,13 @@ db.cliente.insertMany([
     // Region Antofagasta
     {
         username: "user_28",
-        direccion: "Calle Baquedano 101, Antofagasta",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Baquedano 101, Antofagasta",
+              coordinates: [-70.398, -23.648]
+          }
+      ],
         email: "user.antofa1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-7777",
@@ -372,7 +545,13 @@ db.cliente.insertMany([
     // Region Tarapaca
     {
         username: "user_29",
-        direccion: "Calle Tarapacá 202, Iquique",
+        direccion: [
+          {
+              id_direccion: ObjectId(),
+              direccion: "Calle Tarapacá 202, Iquique",
+              coordinates: [-70.140, -20.210]
+          }
+      ],
         email: "user.iquique1@mail.com",
         contrasena: "$2a$10$dlbYCOz.DNvH98Aqjm4Yk.wQ6ReUh9yBjrcTLPkNHRDdhE8IIzgS.",
         telefono: "555-8888",
@@ -380,6 +559,8 @@ db.cliente.insertMany([
         coordenadas: { type: "Point", coordinates: [-70.140, -20.210] }
     },
 ]);
+
+db.cliente.createIndex({coordenadas: "2dsphere"});
 
 // Insertar datos en la colección "TIENDA"
 db.tienda.insertMany([
@@ -490,6 +671,8 @@ db.tienda.insertMany([
       coordenadas: { type: "Point", coordinates: [-70.142, -20.215] },
     },
 ]);
+db.tienda.createIndex({coordenadas: "2dsphere"});
+
 
   // Insertar datos en la colección "REPARTIDOR"
 db.repartidor.insertMany([
@@ -554,6 +737,8 @@ db.repartidor.insertMany([
       coordenadas: { type: "Point", coordinates: [-70.141, -20.212] },
     },
 ]);
+db.repartidor.createIndex({coordenadas: "2dsphere"});
+
 
 // Insertar datos en la colección "ORDEN"
 
