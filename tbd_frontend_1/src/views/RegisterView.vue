@@ -113,18 +113,21 @@ export default {
     };
   },
   methods: {
+
     handleSubmit() {
 
       if (this.usernamex !== '' & this.passwordx !== '' & this.direccionx !== '' & this.telefonox !== '' & this.emailx !== '') {
 
-        const username = this.usernamex;
-        const password = this.passwordx;
-        const rol = "ADMIN";
-        const direccion = this.direccionx;
-        const telefono = this.telefonox;
-        const email = this.emailx;
-
-        const registerDto = {username,email,password,telefono,direccion,rol}
+        const registerDto = {
+          username: this.usernamex,
+          email: this.emailx,
+          password: this.passwordx,
+          telefono: this.telefonox,
+          direccion: this.direccionx,
+          latitude: this.latitude,
+          longitude: this.longitude,
+          rol: "ADMIN",
+        };
 
         // Se intenta register
         authService
@@ -142,8 +145,6 @@ export default {
       } else {
         this.errorMessage = "Complete el formulario";
       }
-
-      
     },
   },
 };

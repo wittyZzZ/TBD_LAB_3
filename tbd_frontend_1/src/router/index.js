@@ -17,6 +17,7 @@ import ClientsByRadius from '@/views/ClientsByRadius.vue'
 import ClientList from '@/views/ClientList.vue'
 import ClientOrders from '@/views/ClientOrders.vue'
 import OrderDetails from '@/views/OrderDetails.vue'
+import TestMapbox from '@/views/TestMapbox.vue'
 
 const routes = [
   {
@@ -111,6 +112,11 @@ const routes = [
     path: '/orderdetails',
     name: 'OrderDetails',
     component: OrderDetails
+  },
+  {
+    path: '/test-mapbox',
+    name: 'TestMapbox',
+    component: TestMapbox
   },
   {
     path: '/:pathMatch(.*)*', // Ruta catch-all
