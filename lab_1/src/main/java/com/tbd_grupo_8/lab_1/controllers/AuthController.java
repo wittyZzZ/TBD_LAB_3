@@ -45,7 +45,17 @@ public class AuthController {
 
             // Obtener el cliente y crear el token con toda su información
             Cliente cliente = clienteService.getByUsername(loginDto.getUsername());
+
+            if (cliente != null) {
+                System.out.println("SI HAY CLIENTE");
+                System.out.println(cliente.getUsername());
+                System.out.println(cliente.getContrasena());
+            } else {
+                System.out.println("NO HAY CLIENTE");
+            }
+
             String jwt = this.jwtUtil.create(cliente); // Modificamos el método `create` para recibir un objeto Cliente
+            System.out.println(jwt);
 
             return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION,jwt).build();
         } catch (BadCredentialsException e) {
