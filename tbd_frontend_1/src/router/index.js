@@ -24,13 +24,13 @@ const routes = [
     path: '/',
     name: 'Home',
     component: HomeView,
-    // meta: { requiresAuth: true } 
+    meta: { requiresAuth: true } 
   },
   {
     path: '/about',
     name: 'About',
     component: AboutView,
-    // meta: { requiresAuth: true } 
+    meta: { requiresAuth: true } 
   },
   {
     path: '/login',

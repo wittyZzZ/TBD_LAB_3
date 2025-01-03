@@ -33,6 +33,12 @@ public class OrdenController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/cliente/{clienteId}")
+    public ResponseEntity<List<Orden>> getOrdenesByClienteId(@PathVariable String clienteId) {
+        List<Orden> ordenes = ordenService.getOrdenesByClienteId(clienteId);
+        return ResponseEntity.ok(ordenes);
+    }
+
     @PostMapping("/crear")
     public ResponseEntity<Orden> createOrden(@RequestBody OrdenDto ordenDto) {
         try {

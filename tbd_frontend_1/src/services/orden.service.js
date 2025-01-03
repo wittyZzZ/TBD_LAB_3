@@ -9,7 +9,7 @@ const getById = id => {
 };
 
 const getByClientId = id => {
-  return httpClient.get(`/api/orden/client/${id}`);
+  return httpClient.get(`/api/orden/cliente/${id}`);
 };
 
 const create = (orden) => {

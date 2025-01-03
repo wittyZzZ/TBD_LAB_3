@@ -1,9 +1,11 @@
 package com.tbd_grupo_8.lab_1.services;
 
 import com.tbd_grupo_8.lab_1.entities.DetalleOrden;
+import com.tbd_grupo_8.lab_1.entities.Orden;
 import com.tbd_grupo_8.lab_1.entities.Producto;
 import com.tbd_grupo_8.lab_1.repositories.DetalleOrdenRepository;
 import com.tbd_grupo_8.lab_1.repositories.ProductoRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +19,11 @@ public class DetalleOrdenService {
     private ProductoRepository productoRepository;
     public List<DetalleOrden> findAll() { return detalleOrdenRepository.findAll(); }
     public DetalleOrden findById(String id) { return detalleOrdenRepository.findById(id).orElse(null); }
-//    public DetalleOrden findByOrdenId(String id) { return detalleOrdenRepository.findById_orden(id); }
+    public List<DetalleOrden> getDetallesByOrdenId(String ordenId) {
+        // Convertir el ordenId a ObjectId
+        ObjectId idOrden = new ObjectId(ordenId);
+        return detalleOrdenRepository.findByOrdenId(idOrden);
+    }
     public List<DetalleOrden> guardarDetalles(List<DetalleOrden> detalleOrdenList) {
 
         //En vez de hacer un saveAll, se hace uno por uno para poder modificar los stocks

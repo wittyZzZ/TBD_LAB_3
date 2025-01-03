@@ -7,6 +7,7 @@ import com.tbd_grupo_8.lab_1.entities.Tienda;
 import com.tbd_grupo_8.lab_1.repositories.ClienteRepository;
 import com.tbd_grupo_8.lab_1.repositories.OrdenRepository;
 import com.tbd_grupo_8.lab_1.repositories.TiendaRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.GeoResults;
@@ -29,6 +30,11 @@ public class OrdenService {
     }
     public Orden findById(String id) {
         return ordenRepository.findById(id).orElse(null);
+    }
+    public List<Orden> getOrdenesByClienteId(String clienteId) {
+        // Convertir el clienteId a ObjectId
+        ObjectId idCliente = new ObjectId(clienteId);
+        return ordenRepository.findByClienteId(idCliente);
     }
     public Orden save(Orden orden) {
         return ordenRepository.save(orden);

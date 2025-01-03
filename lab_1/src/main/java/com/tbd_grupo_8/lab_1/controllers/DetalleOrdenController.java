@@ -1,6 +1,7 @@
 package com.tbd_grupo_8.lab_1.controllers;
 
 import com.tbd_grupo_8.lab_1.entities.DetalleOrden;
+import com.tbd_grupo_8.lab_1.entities.Orden;
 import com.tbd_grupo_8.lab_1.repositories.DetalleOrdenRepository;
 import com.tbd_grupo_8.lab_1.services.DetalleOrdenService;
 import org.bson.types.ObjectId;
@@ -32,6 +33,12 @@ public class DetalleOrdenController {
             return new ResponseEntity<>(detalleOrden, HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/orden/{ordenId}")
+    public ResponseEntity<List<DetalleOrden>> getDetallesByOrdenId(@PathVariable String ordenId) {
+        List<DetalleOrden> detalles = detalleOrdenService.getDetallesByOrdenId(ordenId);
+        return ResponseEntity.ok(detalles);
     }
 
     @PostMapping("/")

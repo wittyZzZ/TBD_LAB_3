@@ -25,7 +25,6 @@ public class Cliente {
     private String rol;
     private GeoJsonPoint coordenadas;
 
-
     public static class Direccion {
         private ObjectId id_direccion; // ObjectId as a string
         private String direccion;
