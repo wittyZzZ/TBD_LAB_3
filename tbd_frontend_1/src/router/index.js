@@ -49,10 +49,10 @@ const routes = [
     meta: { requiresAuth: true } 
   },
   {
-    path: '/client',
+    path: '/client/:id',
     name: 'Client',
     component: ClientView,
-    meta: { requiresAuth: true } 
+    //meta: { requiresAuth: true } 
   },
   {
     path: '/editproduct',
