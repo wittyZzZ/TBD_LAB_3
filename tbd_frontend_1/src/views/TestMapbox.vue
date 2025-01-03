@@ -14,7 +14,11 @@
         @update:search="fetchAddressSuggestions"
         outlined
         dense
-      ></v-autocomplete>
+      >
+      <!-- Slot para personalizar el mensaje de "no data" -->
+      <template #no-data>
+        <div class="ml-4">No hay resultados disponibles.</div>
+      </template></v-autocomplete>
   
       <!-- Coordenadas seleccionadas -->
       <div v-if="selectedCoordinates">
