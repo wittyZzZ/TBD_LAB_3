@@ -7,6 +7,7 @@ import com.tbd_grupo_8.lab_1.entities.Cliente;
 import com.tbd_grupo_8.lab_1.services.ClienteService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -79,12 +80,14 @@ public class AuthController {
             Cliente.Direccion direccionObj = new Cliente.Direccion();
             direccionObj.setId_direccion(new ObjectId()); // Generate a unique ObjectId
             direccionObj.setDireccion(registerDto.getDireccion());
-            direccionObj.setCoordinates(new ArrayList<>(Arrays.asList(-70.0, -34.0)));
+            direccionObj.setCoordinates(registerDto.getCoordinates());
 
             List<Cliente.Direccion> direccionList = new ArrayList<>();
             direccionList.add(direccionObj);
 
             newCliente.setDireccion(direccionList);
+
+            newCliente.setCoordenadas(new GeoJsonPoint(registerDto.getCoordinates().get(0),registerDto.getCoordinates().get(1)));
             clienteService.saveCliente(newCliente);
             return ResponseEntity.ok().build();
         }
