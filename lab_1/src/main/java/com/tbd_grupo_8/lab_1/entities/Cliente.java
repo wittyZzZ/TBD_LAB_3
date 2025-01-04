@@ -1,5 +1,7 @@
 package com.tbd_grupo_8.lab_1.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.tbd_grupo_8.lab_1.config.ObjectIdToStringSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +28,7 @@ public class Cliente {
     private GeoJsonPoint coordenadas;
 
     public static class Direccion {
+        @JsonSerialize(using = ObjectIdToStringSerializer.class)
         private ObjectId id_direccion; // ObjectId as a string
         private String direccion;
         private List<Double> coordinates;

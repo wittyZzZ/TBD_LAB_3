@@ -37,7 +37,7 @@
           v-model="direccionSeleccionada"
           :items="cliente.direccion"
           item-title="direccion"
-          return-object
+          item-value="id_direccion"
           label="Seleccionar Dirección"
         ></v-select>
 
@@ -209,7 +209,7 @@ export default {
 
       try {
         // Llamada al backend para establecer la dirección principal
-        const id_direccion = this.direccionSeleccionada.id_direccion.toString();
+        const id_direccion = this.direccionSeleccionada.toString();
         console.log("Direccion Id: ", id_direccion);
         const response = await clienteService.setMainDireccion(this.cliente.id_cliente, this.direccionSeleccionada);
 
@@ -233,8 +233,8 @@ export default {
         return;
       }
 
+      const id_direccion = this.direccionSeleccionada.toString();
       console.log("Dirección seleccionada:", this.direccionSeleccionada);
-      const id_direccion = this.direccionSeleccionada.id_direccion.toString();
       console.log("Direccion Id: ",id_direccion);
 
       try {
