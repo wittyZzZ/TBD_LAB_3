@@ -19,6 +19,7 @@ const login = (loginDto) => {
           direccion: JSON.parse(decodedToken.direccion),
           email: decodedToken.email,
           telefono: decodedToken.telefono,
+          direccionPrincipal: null,
         }
 
         console.log("OBJ LOGGED USER",user);

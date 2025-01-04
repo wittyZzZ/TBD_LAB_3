@@ -126,10 +126,24 @@ export default {
       const response = await clienteService.getById(id_cliente);
       this.cliente = response.data;
 
-      // Establecer dirección principal
-      this.direccionPrincipal = this.cliente.direccion.find(
-        (dir) => dir.coordinates === this.cliente.coordenadas
-      )?.direccion || "No definida";
+      // Verificar si existe direccionPrincipal en localStorage
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user && user.direccionPrincipal) {
+        this.direccionPrincipal = user.direccionPrincipal;
+      } else {
+        // Establecer dirección principal según las coordenadas
+        this.direccionPrincipal = this.cliente.direccion.find(
+          (dir) =>
+            dir.coordinates[0] === this.cliente.coordenadas.coordinates[0] &&
+            dir.coordinates[1] === this.cliente.coordenadas.coordinates[1]
+        )?.direccion || "No definida";
+
+        // Guardar la dirección principal en localStorage
+        if (user) {
+          user.direccionPrincipal = this.direccionPrincipal;
+          localStorage.setItem("user", JSON.stringify(user));
+        }
+      }
     } catch (error) {
       console.error("Error al cargar el cliente:", error);
     }
@@ -222,6 +236,12 @@ export default {
         ).direccion;
 
         console.log("Dirección principal actualizada correctamente:", this.direccionPrincipal);
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+          user.direccionPrincipal = this.direccionPrincipal;
+          localStorage.setItem('user', JSON.stringify(user));
+          console.log("Dirección principal actualizada en localStorage:", user.direccionPrincipal);
+        }
       } catch (error) {
         console.error("Error al establecer dirección principal:", error);
       }
