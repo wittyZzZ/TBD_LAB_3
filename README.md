@@ -10,7 +10,7 @@
 
 # Descripción del proyecto
 
-El objetivo es diseñar y desarrollar un sistema para un E-commerce, donde se gestionen productos, órdenes de compra, clientes, inventario en tiempo real, zonas de reparto, tiendas o sucursales y repartidores. Garantizando que cuando un cliente realice una compra, el stock de productos se actualice automáticamente, y si el stock de un producto llega a 0, este se marque como “agotado”. Además que se le asigne un repartidor al cliente según la tienda o sucursal. Además de poder hacer un seguimiento mediante consultas, sobre la cercanía de clientes, repartos y pedidos respecto a una tienda específica.
+El objetivo es diseñar y desarrollar un sistema para un E-commerce, donde se gestionen productos, órdenes de compra, clientes, inventario en tiempo real, zonas de reparto, tiendas o sucursales y repartidores. Garantizando que cuando un cliente realice una compra, el stock de productos se actualice automáticamente, y si el stock de un producto llega a 0, este se marque como “agotado”. Además, se debe asignar un repartidor al cliente según la tienda o sucursal. El sistema permitirá también realizar un seguimiento mediante consultas sobre la cercanía de clientes, repartos y pedidos respecto a una tienda específica. Asimismo, el sistema contará con funcionalidades como permitir a los clientes almacenar múltiples direcciones de envío en sus perfiles, guardar un historial completo de las órdenes de cada cliente (incluyendo los productos comprados y el estado de la entrega), y registrar la geolocalización de los clientes para mejorar el servicio de recomendaciones basadas en su ubicación.
 
 # Recursos utilizados para el desarrollo del proyecto:
 
