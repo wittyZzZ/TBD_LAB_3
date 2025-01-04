@@ -14,6 +14,9 @@
                     Correo
                     </th>
                     <th class="text-left font-weight-bold">
+                    Teléfono
+                    </th>
+                    <th class="text-left font-weight-bold">
                     Dirección Principal
                     </th>
                     <th class="text-left font-weight-bold">
@@ -31,6 +34,7 @@
             >
                 <td>{{ client.username }}</td>
                 <td>{{ client.email}}</td>
+                <td>{{ client.telefono}}</td>
                 <td>{{ client.direccion[0].direccion}}</td>
                 <td>
                     <v-btn @click="viewClientOrders(client.id_cliente)" color="primary"> Ver Ordenes </v-btn>

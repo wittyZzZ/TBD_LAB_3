@@ -161,20 +161,18 @@ export default {
           rol: "ADMIN",
         };
 
-        console.log("REGISTER DTO:", registerDto);
-
         // Se intenta register
-        // authService
-        //   .register(registerDto)
-        //   .then((response) => {
-        //     console.log("Se registró", response.data);
-        //     this.errorMessage = ""; // Limpia el mensaje de error si el login es exitoso
-        //     this.$router.push({ name: 'Login' }); // Redirigir a Home después de un register exitoso
-        //   })
-        //   .catch(() => {
-        //     // Mostrar mensaje de error en pantalla
-        //     this.errorMessage = "Este usuario ya existe";
-        //   });
+        authService
+          .register(registerDto)
+          .then((response) => {
+            console.log("Se registró", response.data);
+            this.errorMessage = ""; // Limpia el mensaje de error si el login es exitoso
+            this.$router.push({ name: 'Login' }); // Redirigir a Home después de un register exitoso
+          })
+          .catch(() => {
+            // Mostrar mensaje de error en pantalla
+            this.errorMessage = "Este usuario ya existe";
+          });
         
       } else {
         this.errorMessage = "Complete el formulario";
@@ -222,10 +220,6 @@ export default {
   height: 100vh;
   display: flex;
   align-items: center;
-  /* background-image: url("../assets/yotsuba.jpg");
-  background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat;  */
 }
 
 .v-card {

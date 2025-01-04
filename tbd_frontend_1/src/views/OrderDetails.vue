@@ -14,6 +14,9 @@
                     ID Producto
                     </th>
                     <th class="text-left font-weight-bold">
+                    Nombre Producto
+                    </th>
+                    <th class="text-left font-weight-bold">
                     Precio Unitario
                     </th>
                     <th class="text-left font-weight-bold">
@@ -29,6 +32,7 @@
             >
                 <td>{{ detail.id_detalle}}</td>
                 <td>{{ detail.id_producto }}</td>
+                <td>{{ getProductName(detail.id_producto) }}</td>
                 <td>$ {{ detail.precio_unitario}}</td>
                 <td>{{ detail.cantidad }} unidades</td>
             </tr>
@@ -43,6 +47,7 @@
 <script>
 
 import detalleOrdenService from '@/services/detalleOrden.service';
+import productoService from '@/services/producto.service';
 
 export default {
 
@@ -50,6 +55,7 @@ export default {
         return {
             id_orden: null,
             details: [],
+            products: [],
         }
     },
 
@@ -68,11 +74,25 @@ export default {
             .catch(error => {
                 console.error('Error al obtener los detalles:', error); // Manejamos errores
             });
+
+            // Se obtienen los productos
+            productoService.getAll()
+            .then(response => {
+                console.log("Productos obtenidos: ",response.data);
+                this.products = response.data; // Asignamos los datos de la respuesta
+            })
+            .catch(error => {
+                console.error('Error al obtener los productos:', error); // Manejamos errores
+            });
+
         }
     }, 
     
     methods: {
-        
+        getProductName(productId) {
+            const product = this.products.find(prod => prod.id_producto === productId);
+            return product ? product.nombre : 'Producto no encontrado';
+        }   
     }
 
 }
