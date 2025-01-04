@@ -34,8 +34,8 @@
                 <td>{{ client.direccion[0].direccion}}</td>
                 <td>
                     <v-btn @click="viewClientOrders(client.id_cliente)" color="primary"> Ver Ordenes </v-btn>
-                    <v-btn @click="editClient(client.id_cliente)" color="green">Editar</v-btn>
-
+<!--                     <v-btn @click="editClient(client.id_cliente)" color="green">Perfil</v-btn>
+ -->
                 </td>
             </tr>
 
@@ -75,9 +75,9 @@ export default {
         viewClientOrders(id_cliente) {
             this.$router.push({ name: "ClientOrders", query: { id: id_cliente } });
         },
-        editClient(id_cliente) {
+        /* editClient(id_cliente) {
             this.$router.push({ path: `/client/${id_cliente}` }); // Redirigir al formulario de edición
-        },
+        }, */
     }
 
 }

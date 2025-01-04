@@ -52,7 +52,7 @@ const routes = [
     path: '/client/:id',
     name: 'Client',
     component: ClientView,
-    //meta: { requiresAuth: true } 
+    meta: { requiresAuth: true } 
   },
   {
     path: '/editproduct',
