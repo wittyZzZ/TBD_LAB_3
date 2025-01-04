@@ -35,15 +35,24 @@
                 dense
                 :rules="[rules.required]"
               ></v-text-field>
-              <v-text-field
+
+              <v-autocomplete
                 v-model="direccionx"
-                label="Dirección"
-                placeholder="Ingresa tu dirección"
-                prepend-inner-icon="mdi-map-marker"
+                :items="addressSuggestions"
+                label="Buscar Dirección"
+                placeholder="Ingresa una dirección"
+                item-title="text"
+                item-key="id"
+                :filter="() => true"
+                @update:search="fetchAddressSuggestions"
                 outlined
                 dense
-                :rules="[rules.required]"
-              ></v-text-field>
+              >
+                <template #no-data>
+                  <div class="ml-4">No hay resultados disponibles.</div>
+                </template>
+              </v-autocomplete>
+
               <v-text-field
                 v-model="telefonox"
                 label="Teléfono"
@@ -89,7 +98,8 @@
 </template>
   
 <script>
-import authService from '../services/auth.service';
+import authService from "../services/auth.service";
+import axios from "axios";
 
 export default {
   name: "Register",
@@ -103,47 +113,104 @@ export default {
       telefonox: "",
       show1: false,
       show2: false,
-      errorMessage: '',
+      errorMessage: "",
       rules: {
         required: (value) => !!value || "Requerido.",
         passwordMatch: (value) =>
           value === this.passwordx ||
-          "La contraseña no coincide con la anterior."
+          "La contraseña no coincide con la anterior.",
       },
+      addressSuggestions: [], // Lista de sugerencias
+      selectedAddress: null, // Dirección seleccionada
+      selectedCoordinates: null, // Coordenadas seleccionadas
     };
   },
+  watch: {
+    // Observa cambios en la dirección seleccionada
+    direccionx(newAddress) {
+      if (newAddress) {
+        const selectedSuggestion = this.addressSuggestions.find(
+          (item) => item.text === newAddress
+        );
+        if (selectedSuggestion) {
+          this.selectedCoordinates = selectedSuggestion.coordinates;
+        } else {
+          this.selectedCoordinates = null; // Reinicia si no hay coincidencia
+        }
+      }
+    },
+  },
+
   methods: {
-
     handleSubmit() {
-
-      if (this.usernamex !== '' & this.passwordx !== '' & this.direccionx !== '' & this.telefonox !== '' & this.emailx !== '') {
-
+      if (
+        (this.usernamex !== "") &
+        (this.passwordx !== "") &
+        (this.direccionx !== "") &
+        (this.telefonox !== "") &
+        (this.emailx !== "")
+      ) {
+        
         const registerDto = {
           username: this.usernamex,
           email: this.emailx,
           password: this.passwordx,
           telefono: this.telefonox,
           direccion: this.direccionx,
-          latitude: this.latitude,
-          longitude: this.longitude,
+          coordinates: this.selectedCoordinates,
           rol: "ADMIN",
         };
 
-        // Se intenta register
-        authService
-          .register(registerDto)
-          .then((response) => {
-            console.log("Se registró", response.data);
-            this.errorMessage = ""; // Limpia el mensaje de error si el login es exitoso
-            this.$router.push({ name: 'Login' }); // Redirigir a Home después de un register exitoso
-          })
-          .catch(() => {
-            // Mostrar mensaje de error en pantalla
-            this.errorMessage = "Este usuario ya existe";
-          });
+        console.log("REGISTER DTO:", registerDto);
 
+        // Se intenta register
+        // authService
+        //   .register(registerDto)
+        //   .then((response) => {
+        //     console.log("Se registró", response.data);
+        //     this.errorMessage = ""; // Limpia el mensaje de error si el login es exitoso
+        //     this.$router.push({ name: 'Login' }); // Redirigir a Home después de un register exitoso
+        //   })
+        //   .catch(() => {
+        //     // Mostrar mensaje de error en pantalla
+        //     this.errorMessage = "Este usuario ya existe";
+        //   });
+        
       } else {
         this.errorMessage = "Complete el formulario";
+      }
+    },
+    // Llamada a la API de Mapbox para obtener sugerencias
+    async fetchAddressSuggestions(query) {
+      if (!query) {
+        this.addressSuggestions = [];
+        return;
+      }
+
+      try {
+        const response = await axios.get(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json`,
+          {
+            params: {
+              access_token:
+                "pk.eyJ1Ijoid2l0dHl6IiwiYSI6ImNtNWZ6NDkzNTAzMXUya3E1dmNqemNjaDkifQ.rQ-tUBE3AoJRQuL3_tSMxQ",
+              autocomplete: true,
+              limit: 5,
+              country: "CL", // Filtra por Chile
+            },
+          }
+        );
+
+        // Mapea las sugerencias
+        this.addressSuggestions = response.data.features.map(
+          (feature, index) => ({
+            text: feature.place_name, // Texto que se muestra
+            coordinates: feature.geometry.coordinates, // Coordenadas asociadas
+            id: index,
+          })
+        );
+      } catch (error) {
+        console.error("Error al obtener sugerencias:", error);
       }
     },
   },

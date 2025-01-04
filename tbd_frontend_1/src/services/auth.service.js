@@ -12,6 +12,7 @@ const login = (loginDto) => {
         console.log("Token guardado en localStorage:", token);
         const decodedToken = jwtDecode(token);
         console.log("CONTENIDO TOKEN",decodedToken);
+
         const user = {
           id_cliente: decodedToken.id_cliente,
           username: decodedToken.username,
@@ -19,9 +20,11 @@ const login = (loginDto) => {
           email: decodedToken.email,
           telefono: decodedToken.telefono,
         }
+
         console.log("OBJ LOGGED USER",user);
         // Guardar el usuario en localStorage
         localStorage.setItem('user', JSON.stringify(user));
+
       } else {
         console.error("No se recibió el token en el header 'Authorization'");
       }
