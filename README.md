@@ -34,7 +34,7 @@ Esta guía ayudará a configurar el entorno de desarrollo para trabajar con Inte
 
 ## 1. Clonar el repositorio
 
-git clone https://github.com/wittyZzZ/TBD_LAB_2
+git clone https://github.com/wittyZzZ/TBD_LAB_3
 
 ## 2. Instalación de Node.js
 
