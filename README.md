@@ -72,7 +72,7 @@ git clone https://github.com/wittyZzZ/TBD_LAB_3
 
 1. Abrir una terminal en la carpeta donde se encuentran los scripts correspondientes
 
-2. Ejecutar el siguiente comando para crear la base de datos y las colecciones con sus respectivas validaciones  mongosh "mongodb://localhost:27017/tbd_lab_3" dbCreate.js:
+2. Ejecutar el siguiente comando para crear la base de datos y las colecciones con sus respectivas validaciones:
 
 ```bash
    mongosh "mongodb://localhost:27017/tbd_lab_3" dbCreate.js  
