@@ -74,16 +74,16 @@ git clone https://github.com/wittyZzZ/TBD_LAB_2
 
 2. Ejecutar el siguiente comando para crear la base de datos y las colecciones con sus respectivas validaciones  mongosh "mongodb://localhost:27017/tbd_lab_3" dbCreate.js:
 
-´´´   
-   mongosh "mongodb://localhost:27017/tbd_lab_3" dbCreate.js   
-´´´
+```bash
+   mongosh "mongodb://localhost:27017/tbd_lab_3" dbCreate.js  
+``` 
 
 ## 5.2 Cargar datos en las colecciones
 
 1. Ejecutar el siguiente comando para cargar los datos iniciales en las colecciones:
-´´´
-   mongosh "mongodb://localhost:27017/tbd_lab_3" loadData.js
-´´´
+```bash
+mongosh "mongodb://localhost:27017/tbd_lab_3" loadData.js
+```
 
 ## 5.3 Verificar la carga de datos
 
