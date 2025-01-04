@@ -16,7 +16,7 @@ El objetivo es diseñar y desarrollar un sistema para un E-commerce, donde se ge
 
    ## Base de datos
    * MongoDB versión 8.0
-   * Mongosh versión 1.0
+   * Mongosh versión 2.3
    * MongoDB Compass versión 1.45 (opcional, para visualización y consultas)
 
    ## Backend
