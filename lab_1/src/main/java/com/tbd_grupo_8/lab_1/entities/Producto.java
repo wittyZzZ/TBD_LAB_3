@@ -1,5 +1,7 @@
 package com.tbd_grupo_8.lab_1.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.tbd_grupo_8.lab_1.config.ObjectIdToStringSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +21,6 @@ public class Producto {
     private Integer precio;
     private Integer stock;
     private String estado;
+    @JsonSerialize(using = ObjectIdToStringSerializer.class)
     private ObjectId id_categoria;
 }

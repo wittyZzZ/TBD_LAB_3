@@ -30,7 +30,7 @@ public class DetalleOrdenService {
         for (DetalleOrden detalle : detalleOrdenList) {
 
             // Verificar si el producto existe
-            Producto producto = productoRepository.findById(detalle.getId_producto())
+            Producto producto = productoRepository.findById(detalle.getId_producto().toString())
                     .orElseThrow(() -> new RuntimeException("Producto no encontrado con ID: " + detalle.getId_producto()));
 
             // Verificar si hay suficiente stock

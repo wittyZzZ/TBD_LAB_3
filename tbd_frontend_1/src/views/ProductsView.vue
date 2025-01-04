@@ -66,6 +66,7 @@ export default {
       .getAll()
       .then((response) => {
         this.productos = response.data;
+        console.log(this.productos);
       })
       .catch((error) => {
         console.error("Error al obtener los productos:", error);
