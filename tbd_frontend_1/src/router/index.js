@@ -18,6 +18,7 @@ import ClientList from '@/views/ClientList.vue'
 import ClientOrders from '@/views/ClientOrders.vue'
 import OrderDetails from '@/views/OrderDetails.vue'
 import TestMapbox from '@/views/TestMapbox.vue'
+import ClientsLocation from '@/views/ClientsLocation.vue'
 
 const routes = [
   {
@@ -112,6 +113,11 @@ const routes = [
     path: '/orderdetails',
     name: 'OrderDetails',
     component: OrderDetails
+  },
+  {
+    path: '/clientslocation',
+    name: 'ClientsLocation',
+    component: ClientsLocation
   },
   {
     path: '/test-mapbox',

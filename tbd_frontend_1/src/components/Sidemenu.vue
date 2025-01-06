@@ -27,6 +27,7 @@
           //{ text: "Categorias", icon: "mdi-checkbox-multiple-blank", route: ""},
           { text: "Ordenes", icon: "mdi-order-bool-descending-variant", route: "/orders"},
           { text: "Clientes Registrados", icon: "mdi-account", route: "/clientlist"},
+          { text: "Ubicación de Clientes", icon: "mdi-map-marker-multiple", route: "/clientslocation"},
           { text: "Perfil", icon: "mdi-account", route: "" },
           { text: "Ordenes en radio de tienda", icon: "mdi-account", route: "/orderstore"},
           { text: "Repartidores en zona de reparto", icon: "mdi-account", route: "/deliveryzone"},
@@ -37,15 +38,15 @@
       };
     },
     mounted() {
-    // Obtener el usuario desde el localStorage
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user) {
-      this.userId = user.id_cliente;
-      // Actualizar dinámicamente la ruta del perfil
-      this.menuItems.find((item) => item.text === "Perfil").route = `/client/${this.userId}`;
-    } else {
-      console.error("No se encontró el usuario en el localStorage");
-    }
+      // Obtener el usuario desde el localStorage
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        this.userId = user.id_cliente;
+        // Actualizar dinámicamente la ruta del perfil
+        this.menuItems.find((item) => item.text === "Perfil").route = `/client/${this.userId}`;
+      } else {
+        console.error("No se encontró el usuario en el localStorage");
+      }
   },
 };
 </script>

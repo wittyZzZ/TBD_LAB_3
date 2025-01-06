@@ -31,6 +31,10 @@
                 </v-btn>
             </v-col>
 
+            <div>
+                {{ clients[0] }}
+            </div>
+
             <v-divider class="mt-3"></v-divider>
 
             <v-col v-if="deliverys.length > 0" cols="12" md="3">
