@@ -121,5 +121,5 @@ mongosh "mongodb://localhost:27017/tbd_lab_3" loadData.js
 
 ## 8. Login en aplicación web
 
-* Existen 29 usuarios cargados en la base de datos, y para loguearse con uno de ellos el nombre de usuario es "user_i" (con i = {1,2,3,...,29} ) y la contraseña es "123" para todos
+* Existen 29 usuarios cargados en la base de datos, y para loguearse con uno de ellos el nombre de usuario es "user_i" (con i = {1,2,3,...,29} ) y la contraseña es "123" para todos.
 
